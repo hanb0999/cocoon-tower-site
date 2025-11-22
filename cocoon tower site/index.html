@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>COCOON TOWER</title>
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="icon" href="images/favicon.png" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="images/favicon.png">
+    </head>
+    <body>
+        <section id="introSection">
+            <img src="images/cocoon.jpg" alt="Background Image" class="background-image" />
+            <canvas id="revealCanvas"></canvas>
+
+            <div id="mainTitle">
+                <h2 class="intro-word word-cocoon">COCOON</h2>
+                <h2 class="intro-word word-tower">TOWER</h2>
+            </div>
+
+            <div id="scrollHint">
+                <img src="images/scroll-cursor.svg" alt="Scroll Hint" />
+            </div>
+        </section>
+
+        <div class="full-bg">
+        <section id="aboutSection" class="hidden-section">
+            <div class="content-wrapper">
+                <p>
+                    COCOON TOWERは、夢を育み、未来へ羽ばたく学生たちの学びの場です。繭のように温かく包み込みながら、新しい可能性をここから世界へ解き放ちます。
+                </p>
+            </div>
+        </section>
+        </div>
+
+        <div class="bg-color">
+            <section id="stackedInfoSection">
+                <div class="info-block bg-1">
+                <h3>STRUCTURE</h3>
+                <p>モード学園コクーンタワーは、高さ204メートル・地上50階建ての教育機関用超高層ビルです。2008年完成、HAL東京・首都医校・モード学園の3つの専門学校が入っています。</p>
+                </div>
+                <div class="info-block bg-2">
+                <h3>ARCHITECTURE</h3>
+                <p>建物は繭（まゆ）型の独特な外観で、「学生の成長を包み込む繭」をイメージ。ねじれた楕円形のフォルムは、空気抵抗を軽減し、未来的な印象を与えます。</p>
+                </div>
+                <div class="info-block bg-3">
+                <h3>EXTERIOR</h3>
+                <p>外壁は、白い対角線のバンド（斜め格子）が青いガラス外壁を包み込むデザイン。この斜め格子はデザイン性だけでなく、構造的強度を高め、地震への耐性も強化されています。</p>
+                </div>
+                <div class="info-block bg-4">
+                <h3>INTERIOR</h3>
+                <p>各フロアは三角形のループ状で、教室が中央コア（エレベーター・階段）を囲むように配置。3フロアごとに学生ラウンジがあり、学生同士の交流が促進されています。</p>
+                </div>
+            </section>
+        </div>
+
+        <section id="photoSlideshow">
+            <button class="slide-btn prev">‹</button>
+        
+            <div class="slideshow-container">
+                <img src="images/p1.JPG" class="slide active" alt="Slide 1" />
+                <img src="images/p2.jpg" class="slide" alt="Slide 2" />
+                <img src="images/p3.jpg" class="slide" alt="Slide 3" />
+                <img src="images/p4.jpg" class="slide" alt="Slide 4" />
+                <img src="images/p5.jpg" class="slide" alt="Slide 5" />
+                <img src="images/p6.jpg" class="slide" alt="Slide 6" />
+                <img src="images/p7.JPG" class="slide" alt="Slide 7" />
+                <img src="images/p8.jpg" class="slide" alt="Slide 8" />
+                <img src="images/p9.jpg" class="slide" alt="Slide 9" />
+                <img src="images/p10.jpg" class="slide" alt="Slide 10" />
+            </div>
+
+            <button class="slide-btn next">›</button>
+        </section>
+
+        <section id="noteSection">
+            <p class="note-text">でも、コクーンタワーの中を移動するの<small>っ</small>て、ち<small>ょっ</small>と<span class="red-word">迷いやすい</span>かも…</p>
+            
+            <div id="animatedFollowUp">
+                <span class="animated-word">だからこそ、</span>
+                <span class="animated-word"><span class="blue-word">コクーンナビゲーションサイト</span>が</span>
+                <span class="animated-word">あ<small>っ</small>たら、</span>
+                <span class="animated-word">も<small>っ</small>と</span>
+                <span class="animated-word"><span class="green-word">便利</span>かなぁ</span>
+                <span class="animated-word">。</span>
+                <span class="animated-word">。</span>
+                <span class="animated-word">。</span>
+            </div>
+        </section>
+
+        <section id="phoneDemoSection">
+            <div class="phone-wrapper">
+                <img src="images/iphone.png" class="phone-image" />
+                <iframe src="cocoon-done/index.html" class="screen-inside-image" title="Demo"></iframe>
+            </div>
+            <footer class="footer">© ７番地</footer>
+        </section>
+
+        <script src="js/script.js"></script>
+    </body>
+</html>
