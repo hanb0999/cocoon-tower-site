@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+        <title>COCOONナビゲーター</title>
+        <link rel="stylesheet" href="css/style.css"/>
+        <link rel="icon" href="images/favicon.png" type="image/svg+xml">
+        <link rel="apple-touch-icon" href="images/favicon.png">
+    </head>
+    
+    <body>
+        <section id="scene-intro">
+            <video id="introVideo" class="full-video" autoplay muted playsinline>
+                <source src="images/cocoon-intro.mp4" type="video/mp4" />
+            </video>
+        </section>
+
+        <section id="scene-main" class="hidden">
+            <div class="main-bg"></div>
+            <div class="main-content">
+                <div class="main-buttons">
+                    <button class="main-btn" id="btn-route">教室までのルート案内</button>
+                    <button class="main-btn" id="btn-timetable">時間割</button>
+                    <button class="main-btn" id="btn-seat">座席表</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="scene-route" class="hidden">
+            <div class="route-bg"></div>
+            <div class="route-content">
+                <div class="route-title">教室までのルート案内</div>
+                <div class="route-buttons">
+                    <button class="route-btn" id="btn-mon">月曜日２０４室</button>
+                    <button class="route-btn" id="btn-tue">火曜日１９９室</button>
+                    <button class="route-btn" id="btn-wed">水曜日１９１室</button>
+                    <button class="route-btn" id="btn-thu">木曜日１９７室</button>
+                    <button class="route-btn" id="btn-fri">金曜日２９４室</button>
+                </div>
+                <button class="route-back-btn" id="btn-route-back">戻る</button>
+            </div>
+        </section>
+
+        <section id="scene-mon204" class="hidden">
+            <div class="mon204-bg"></div>
+            <div class="mon204-content">
+                <div class="mon204-title">月曜日２０４室<br><span class="mon204-sub">ルート案内</span></div>
+                <div class="mon204-flexbox">
+                  <div class="route-card">
+                    <div class="route-header">
+                      <span class="route-time">12:50分</span>
+                    </div>
+                    <div class="route-steps">
+                      <div class="route-step">
+                        <div class="route-icon"><img src="images/elevator.png" alt="電梯" /></div>
+                        <div class="route-info">
+                          <div class="route-label">2/F</div>
+                          <div class="route-desc">緑エレベーターに乗る</div>
+                        </div>
+                      </div>
+                      <div class="route-line green"></div>
+                      <div class="route-step">
+                        <div class="route-icon"><img src="images/stairs.png" alt="樓梯" /></div>
+                        <div class="route-info">
+                          <div class="route-label">21/F</div>
+                          <div class="route-desc">階段を使う → 右に行く</div>
+                        </div>
+                      </div>
+                      <div class="route-line"></div>
+                      <div class="route-step">
+                        <div class="route-icon"><img src="images/walk.png" alt="步行" /></div>
+                        <div class="route-info">
+                          <div class="route-label red">204室</div>
+                          <div class="route-desc">到着</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="route-back-btn" id="btn-mon204-back">戻る</button>
+                <button class="seat-btn" id="btn-mon204-seat">座席表</button>
+            </div>
+        </section>
+
+        <section id="scene-tue199" class="hidden">
+            <div class="mon204-bg"></div>
+            <div class="mon204-content">
+                <div class="mon204-title">火曜日１９９室<br><span class="mon204-sub">ルート案内</span></div>
+                <div class="mon204-flexbox">
+                  <div class="route-card">
+                    <div class="route-header">
+                      <span class="route-time">09:30分</span>
+                    </div>
+                    <div class="route-steps">
+                      <div class="route-step">
+                        <div class="route-icon"><img src="images/elevator.png" alt="電梯" /></div>
+                        <div class="route-info">
+                          <div class="route-label">2/F</div>
+                          <div class="route-desc">緑エレベーターに乗る</div>
+                        </div>
+                      </div>
+                      <div class="route-line green"></div>
+                      <div class="route-step">
+                        <div class="route-icon"><img src="images/stairs.png" alt="樓梯" /></div>
+                        <div class="route-info">
+                          <div class="route-label">18/F</div>
+                          <div class="route-desc">階段を使う → 左に行く</div>
+                        </div>
+                      </div>
+                      <div class="route-line"></div>
+                      <div class="route-step">
+                        <div class="route-icon"><img src="images/walk.png" alt="步行" /></div>
+                        <div class="route-info">
+                          <div class="route-label green">199室</div>
+                          <div class="route-desc">到着</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="route-back-btn" id="btn-tue199-back">戻る</button>
+                <button class="seat-btn" id="btn-tue199-seat">座席表</button>
+            </div>
+        </section>
+
+        <section id="scene-wed191" class="hidden">
+            <div class="mon204-bg"></div>
+            <div class="mon204-content">
+                <div class="mon204-title">水曜日１９１室<br><span class="mon204-sub">ルート案内</span></div>
+                <div class="mon204-flexbox">
+                  <div class="route-card">
+                    <div class="route-header">
+                      <span class="route-time">09:30分</span>
+                    </div>
+                    <div class="route-steps">
+                      <div class="route-step">
+                        <div class="route-icon"><img src="images/elevator.png" alt="電梯" /></div>
+                        <div class="route-info">
+                          <div class="route-label">2/F</div>
+                          <div class="route-desc">緑エレベーターに乗る</div>
+                        </div>
+                      </div>
+                      <div class="route-line green"></div>
+                      <div class="route-step">
+                        <div class="route-icon"><img src="images/stairs.png" alt="樓梯" /></div>
+                        <div class="route-info">
+                          <div class="route-label">18/F</div>
+                          <div class="route-desc">階段を使う → 右に行く</div>
+                        </div>
+                      </div>
+                      <div class="route-line"></div>
+                      <div class="route-step">
+                        <div class="route-icon"><img src="images/walk.png" alt="步行" /></div>
+                        <div class="route-info">
+                          <div class="route-label blue">191室</div>
+                          <div class="route-desc">到着</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="route-back-btn" id="btn-wed191-back">戻る</button>
+                <button class="seat-btn" id="btn-wed191-seat">座席表</button>
+            </div>
+        </section>
+
+        <section id="scene-thu197" class="hidden">
+            <div class="mon204-bg"></div>
+            <div class="mon204-content">
+                <div class="mon204-title">木曜日１９７室<br><span class="mon204-sub">ルート案内</span></div>
+                <div class="mon204-flexbox">
+                  <div class="route-card">
+                    <div class="route-header">
+                      <span class="route-time">09:30分</span>
+                    </div>
+                    <div class="route-steps">
+                      <div class="route-step">
+                        <div class="route-icon"><img src="images/elevator.png" alt="電梯" /></div>
+                        <div class="route-info">
+                          <div class="route-label">2/F</div>
+                          <div class="route-desc">緑エレベーターに乗る</div>
+                        </div>
+                      </div>
+                      <div class="route-line green"></div>
+                      <div class="route-step">
+                        <div class="route-icon"><img src="images/stairs.png" alt="樓梯" /></div>
+                        <div class="route-info">
+                          <div class="route-label">18/F</div>
+                          <div class="route-desc">階段を使う → 左に行く</div>
+                        </div>
+                      </div>
+                      <div class="route-line"></div>
+                      <div class="route-step">
+                        <div class="route-icon"><img src="images/walk.png" alt="步行" /></div>
+                        <div class="route-info">
+                          <div class="route-label green">197室</div>
+                          <div class="route-desc">到着</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="route-back-btn" id="btn-thu197-back">戻る</button>
+                <button class="seat-btn" id="btn-thu197-seat">座席表</button>
+            </div>
+        </section>
+
+        <section id="scene-fri294" class="hidden">
+            <div class="mon204-bg"></div>
+            <div class="mon204-content">
+                <div class="mon204-title">金曜日２９４室<br><span class="mon204-sub">ルート案内</span></div>
+                <div class="mon204-flexbox">
+                  <div class="route-card">
+                    <div class="route-header">
+                      <span class="route-time">14:30分</span>
+                    </div>
+                    <div class="route-steps">
+                      <div class="route-step">
+                        <div class="route-icon"><img src="images/elevator.png" alt="電梯" /></div>
+                        <div class="route-info">
+                          <div class="route-label">2/F</div>
+                          <div class="route-desc">緑エレベーターに乗る</div>
+                        </div>
+                      </div>
+                      <div class="route-line green"></div>
+                      <div class="route-step">
+                        <div class="route-icon"><img src="images/stairs.png" alt="樓梯" /></div>
+                        <div class="route-info">
+                          <div class="route-label">30/F</div>
+                          <div class="route-desc">階段を使う → 右に行く</div>
+                        </div>
+                      </div>
+                      <div class="route-line"></div>
+                      <div class="route-step">
+                        <div class="route-icon"><img src="images/walk.png" alt="步行" /></div>
+                        <div class="route-info">
+                          <div class="route-label red">294室</div>
+                          <div class="route-desc">到着</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <button class="route-back-btn" id="btn-fri294-back">戻る</button>
+                <button class="seat-btn" id="btn-fri294-seat">座席表</button>
+            </div>
+        </section>
+
+        <section id="scene-seat" class="hidden">
+            <div class="seat-content">
+                <div class="seat-meta">PW11A124・座席表</div>
+                <div class="seat-table-wrapper">
+                  <img src="images/seating-plan-204.png" alt="204室座席表" class="seat-plan-img" />
+                  <img src="images/seating-plan-199.png" alt="199室座席表" class="seat-plan-img" />
+                  <img src="images/seating-plan-191.png" alt="191室座席表" class="seat-plan-img" />
+                  <img src="images/seating-plan-197.png" alt="197室座席表" class="seat-plan-img" />
+                  <img src="images/seating-plan-294.png" alt="294室座席表" class="seat-plan-img" />
+                </div>
+                <button class="route-back-btn" id="btn-seat-back">戻る</button>
+            </div>
+        </section>
+
+        <section id="scene-timetable" class="hidden">
+            <div class="timetable-content">
+              <div class="flex-spacer"></div>  
+              <div class="timetable-title">PW11A124・時間割</div>
+                <div class="timetable-img-wrapper">
+                  <img src="images/timetable.png" alt="時間割" class="timetable-img" />
+                </div>
+                <div class="flex-spacer"></div>
+                <button class="route-back-btn" id="btn-timetable-back">戻る</button>
+            </div>
+        </section>
+
+
+        <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sceneIntro = document.getElementById('scene-intro');
+            const introVideo = document.getElementById('introVideo');
+
+            const sceneMain = document.getElementById('scene-main');
+            const sceneRoute = document.getElementById('scene-route');
+            const sceneTimetable = document.getElementById('scene-timetable');
+            const sceneSeat = document.getElementById('scene-seat');
+
+            const sceneMon204 = document.getElementById('scene-mon204');
+            const sceneTue199 = document.getElementById('scene-tue199');
+            const sceneWed191 = document.getElementById('scene-wed191');
+            const sceneThu197 = document.getElementById('scene-thu197');
+            const sceneFri294 = document.getElementById('scene-fri294');
+
+            if (introVideo) {
+                introVideo.addEventListener('ended', () => {
+                    if (sceneIntro) sceneIntro.classList.add('hidden');
+                    if (sceneMain) sceneMain.classList.remove('hidden');
+                });
+            }
+
+            const btnRoute = document.getElementById('btn-route');
+            if (btnRoute) {
+                btnRoute.addEventListener('click', () => {
+                    if (sceneMain) sceneMain.classList.add('hidden');
+                    if (sceneRoute) sceneRoute.classList.remove('hidden');
+                });
+            }
+
+            const btnTimetable = document.getElementById('btn-timetable');
+            if (btnTimetable) {
+                btnTimetable.addEventListener('click', () => {
+                    if (sceneMain) sceneMain.classList.add('hidden');
+                    if (sceneTimetable) sceneTimetable.classList.remove('hidden');
+                });
+            }
+
+            let lastRoutePage = null; 
+
+            const btnSeatMain = document.getElementById('btn-seat');
+            if (btnSeatMain) {
+                btnSeatMain.addEventListener('click', () => {
+                    if (sceneMain) sceneMain.classList.add('hidden');
+                    if (sceneSeat) sceneSeat.classList.remove('hidden');
+                    lastRoutePage = 'scene-main'; 
+                });
+            }
+
+            const btnRouteBack = document.getElementById('btn-route-back');
+            if (btnRouteBack) {
+                btnRouteBack.addEventListener('click', () => {
+                    if (sceneRoute) sceneRoute.classList.add('hidden');
+                    if (sceneMain) sceneMain.classList.remove('hidden');
+                });
+            }
+
+            const routeDayButtons = [
+                { btnId: 'btn-mon', targetScene: sceneMon204 },
+                { btnId: 'btn-tue', targetScene: sceneTue199 },
+                { btnId: 'btn-wed', targetScene: sceneWed191 },
+                { btnId: 'btn-thu', targetScene: sceneThu197 },
+                { btnId: 'btn-fri', targetScene: sceneFri294 }
+            ];
+
+            routeDayButtons.forEach(item => {
+                const btn = document.getElementById(item.btnId);
+                if (btn) {
+                    btn.addEventListener('click', () => {
+                        if (sceneRoute) sceneRoute.classList.add('hidden');
+                        if (item.targetScene) item.targetScene.classList.remove('hidden');
+                    });
+                }
+            });
+
+            const routeDetailBackButtons = [
+                { scene: sceneMon204, backBtnId: 'btn-mon204-back' },
+                { scene: sceneTue199, backBtnId: 'btn-tue199-back' },
+                { scene: sceneWed191, backBtnId: 'btn-wed191-back' },
+                { scene: sceneThu197, backBtnId: 'btn-thu197-back' },
+                { scene: sceneFri294, backBtnId: 'btn-fri294-back' }
+            ];
+
+            routeDetailBackButtons.forEach(item => {
+                const backBtn = document.getElementById(item.backBtnId);
+                if (backBtn) {
+                    backBtn.addEventListener('click', () => {
+                        if (item.scene) item.scene.classList.add('hidden');
+                        if (sceneRoute) sceneRoute.classList.remove('hidden'); 
+                    });
+                }
+            });
+
+            const seatFromRouteButtons = [
+                { btnId: 'btn-mon204-seat', routeSceneId: 'scene-mon204' },
+                { btnId: 'btn-tue199-seat', routeSceneId: 'scene-tue199' },
+                { btnId: 'btn-wed191-seat', routeSceneId: 'scene-wed191' },
+                { btnId: 'btn-thu197-seat', routeSceneId: 'scene-thu197' },
+                { btnId: 'btn-fri294-seat', routeSceneId: 'scene-fri294' }
+            ];
+
+            seatFromRouteButtons.forEach(item => {
+                const btn = document.getElementById(item.btnId);
+                if (btn) {
+                    btn.addEventListener('click', () => {
+                        const currentRouteScene = document.getElementById(item.routeSceneId);
+                        if (currentRouteScene) currentRouteScene.classList.add('hidden');
+                        if (sceneSeat) sceneSeat.classList.remove('hidden');
+                        lastRoutePage = item.routeSceneId; 
+                    });
+                }
+            });
+
+            const btnSeatBack = document.getElementById('btn-seat-back');
+            if (btnSeatBack) {
+                btnSeatBack.addEventListener('click', () => {
+                    if (sceneSeat) sceneSeat.classList.add('hidden');
+                    if (lastRoutePage) {
+                        const prevScene = document.getElementById(lastRoutePage);
+                        if (prevScene) prevScene.classList.remove('hidden');
+                    } else {
+                        if (sceneMain) sceneMain.classList.remove('hidden');
+                    }
+                });
+            }
+
+            const btnTimetableBack = document.getElementById('btn-timetable-back');
+            if (btnTimetableBack) {
+                btnTimetableBack.addEventListener('click', () => {
+                    if (sceneTimetable) sceneTimetable.classList.add('hidden');
+                    if (sceneMain) sceneMain.classList.remove('hidden');
+                });
+            }
+        });
+        </script>
+    </body>
+</html>
