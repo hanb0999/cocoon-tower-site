@@ -1,0 +1,563 @@
+@media only screen and (min-width: 769px) {
+  body {
+    display: none;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+@font-face {
+  font-family: 'BIZ UDPGothic';
+  src: url('fonts/BIZUDPGothic-Bold.ttf') format('truetype'); 
+}
+body, html {
+  height: 100%;
+  overflow: hidden;
+  font-family: sans-serif;
+}
+
+.full-video {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 1;
+}
+section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100dvh;
+  overflow: hidden;
+  transition: opacity 1s ease;
+  z-index: 1;
+}
+.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+section:not(.hidden) {
+  opacity: 1;
+  pointer-events: all;
+  z-index: 2;
+}
+
+#scene-main {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('../images/ccoon2.jpg') no-repeat center center;
+  background-size: cover;
+  z-index: 10;
+}
+
+.main-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.main-content {
+  position: relative;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  width: 90vw;
+  max-width: 400px;
+}
+.main-btn {
+  width: 85%;
+  padding: 15px 5px;
+  font-size: 18px;
+  border-radius: 50px;
+  border: none;
+  background: #fff;
+  color: #131212;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  margin: 0 auto;
+  transition: background 0.2s, color 0.2s;
+}
+.main-btn:active {
+  background: #222;
+  color: #fff;
+}
+.main-btn:hover, .route-btn:hover, .route-back-btn:hover {
+  background: #333;
+  color: #fff;
+}
+
+#scene-route {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('../images/route-bg.jpg') no-repeat center center;
+  background-size: cover;
+  z-index: 10;
+}
+.route-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.route-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.route-title {
+  font-family: 'BIZ UDPGothic';
+  color: #fff;
+  font-size: 27px;
+  font-weight: bolder;
+  margin-bottom: 15px;
+  text-shadow: 0 0 8px #000;
+  text-align: center;
+}
+.route-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 90%;
+  max-width: 400px;
+}
+.route-btn {
+  width: 80%;
+  padding: 18px 0;
+  font-size: 17px;
+  border-radius: 50px;
+  border: none;
+  background: #fff;
+  color: #222;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  margin: 0 auto;
+  transition: background 0.2s, color 0.2s;
+}
+.route-btn:active {
+  background: #222;
+  color: #fff;
+}
+.route-back-btn {
+  position: absolute;
+  right: 24px;
+  bottom: 20px;
+  padding: 5px 20px;
+  font-size: 10px;
+  border-radius: 50px;
+  border: none;
+  background: #fff;
+  color: #222;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  transition: background 0.2s, color 0.2s;
+  z-index: 3;
+}
+.route-back-btn:active {
+  background: #222;
+  color: #fff;
+}
+#scene-mon204, #scene-fri294 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('../images/route-bg-green.jpg') no-repeat center center;
+  background-size: cover;
+  z-index: 10;
+}
+#scene-wed191 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('../images/route-bg-green.jpg') no-repeat center center;
+  background-size: cover;
+  z-index: 10;
+}
+#scene-tue199, #scene-thu197 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('../images/route-bg-green.jpg') no-repeat center center;
+  background-size: cover;
+  z-index: 10;
+}
+.mon204-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.mon204-content {
+  position: relative;
+  z-index: 2;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.mon204-title {
+  font-family: 'BIZUDPGothic';
+  color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-shadow: 0 0 8px #000;
+  text-align: center;
+}
+.mon204-flexbox {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  width: 90vw;
+  max-width: 800px;
+  justify-content: center;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+.route-card {
+  background: hsl(0, 0%, 100%);
+  border-radius: 24px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+  padding: 24px 18px;
+  max-width: 340px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+.route-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 18px;
+}
+.route-time {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+.route-min {
+  font-size: 1em;
+  color: #bbb;
+}
+.route-steps {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.route-step {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 0;
+  width: 100%;
+}
+.route-icon img {
+  width: 36px;
+  height: 36px;
+  object-fit: contain;
+  margin-right: 12px;
+}
+.route-info {
+  display: flex;
+  flex-direction: column;
+}
+.route-label {
+  font-weight: bold;
+  font-size: 1em;
+}
+.route-desc {
+  font-size: 0.95em;
+  color: #333;
+}
+.route-line {
+  width: 6px;
+  height: 40px;
+  background: #bbb;
+  border-radius: 3px;
+  margin: 0 0 0 18px;
+}
+.route-line.green {
+  background: #4caf50;
+}
+.mon204-sub {
+  font-family: 'BIZUDPGothic';
+  display: block;
+  font-size: 20px;
+  color: #fff;
+  font-weight: normal;
+  margin-top: -5px;
+  margin-bottom: 5px;
+  letter-spacing: 0.05em;
+}
+.route-label.red {
+  color: #e53935;
+}
+.route-label.green {
+  color: #43a047;
+}
+.route-label.blue {
+  color: #1e88e5;
+}
+.seat-btn {
+  position: absolute;
+  left: 24px;
+  bottom: 20px;
+  padding: 5px 20px;
+  font-size: 10px;
+  border-radius: 50px;
+  border: none;
+  background: #fff;
+  color: #222;
+  font-weight: bold;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+  transition: background 0.2s, color 0.2s;
+  z-index: 3;
+  cursor: pointer;
+}
+.seat-btn:active, .seat-btn:hover {
+  background: #333;
+  color: #fff;
+}
+.seat-content {
+  width: 100vw;
+  min-height: 100dvh;
+  max-height: 100dvh;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background: url('../images/seat-bg.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  padding-top: 8px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 80px;
+}
+.seat-content::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.7);
+  z-index: 0;
+}
+.seat-content > * {
+  position: relative;
+  z-index: 1;
+}
+.seat-title {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+.seat-room {
+  background: #ffe600;
+  color: #222;
+  padding: 4px 32px;
+  border-radius: 4px;
+  font-size: 2em;
+  font-weight: bold;
+  margin-right: 12px;
+}
+.seat-meta {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 0 20px 0;
+  padding: 5px 30px;
+  background: white;
+  border-radius: 50px;
+  align-items: center;
+  border: 0.5px solid #000;
+}
+@media (max-width: 600px) {
+  .seat-content {
+    padding-top: 8px;
+  }
+  .seat-title {
+    font-size: 1.1em;
+  }
+  .seat-room {
+    font-size: 1.1em;
+    padding: 2px 12px;
+  }
+  .seat-table td {
+    min-width: 60px;
+    min-height: 28px;
+    font-size: 0.7em;
+    padding: 3px 2px;
+  }
+  .seat-table {
+    border-spacing: 4px 4px;
+  }
+}
+.seat-table-wrapper {
+  display: block;
+  width: 100vw;
+  margin-bottom: 8px;
+  padding-bottom: 0;
+  overflow: visible;
+  max-height: none;
+}
+.seat-table {
+  width: max-content;
+  min-width: 340px;
+  margin: 0 auto;
+}
+.seat-table td {
+  border: 2px solid #222;
+  border-radius: 6px;
+  padding: 8px 10px;
+  min-width: 110px;
+  min-height: 48px;
+  text-align: center;
+  font-size: 1em;
+  background: #fff;
+  vertical-align: middle;
+}
+.seat-table .seat-empty {
+  background: transparent;
+  border: none;
+  height: 32px;
+}
+.seat-plan-img {
+  display: block;
+  max-width: 100vw;
+  width: 100vw;
+  height: auto;
+  margin: 0 auto 8px auto;
+  border: 2px solid #ddd;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+.route-back-btn#btn-seat-back {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  z-index: 10;
+  border-radius: 50px;
+  width: 25%;
+}
+.flex-spacer {
+  flex-grow: 1;
+}
+.timetable-content {
+  flex-direction: column;
+  justify-content: center;
+  width: 100vw;
+  height: 100dvh;
+  overflow-y: auto;
+  display: flex;
+  align-items: center;
+  background: url('../images/seat-bg.jpg') no-repeat center center;
+  background-size: cover;
+  position: relative;
+  padding-top: 8px;
+  padding-left: 0;
+  padding-right: 0;
+  padding-bottom: 80px;
+}
+.timetable-content::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(255,255,255,0.7);
+  z-index: 0;
+}
+.timetable-content > * {
+  position: relative;
+  z-index: 1;
+}
+.timetable-title {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 20px 0 20px 0;
+  padding: 5px 40px;
+  background: white;
+  border-radius: 50px;
+  border: 0.5px solid #000;
+}
+.timetable-img-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.timetable-img {
+  max-width: 100%;
+  width: 95%;
+  height: auto;
+  margin-bottom: 12px;
+}
+.route-back-btn#btn-timetable-back {
+  position: fixed;
+  left: 50%;
+  bottom: 24px;
+  transform: translateX(-50%);
+  z-index: 10;
+  border-radius: 50px;
+  width: 25%;
+}
